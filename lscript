@@ -1,0 +1,13 @@
+MEMORY
+{
+     ini : ORIGIN = 0x0000, LENGTH = 0x80
+     ram : ORIGIN = 0x8000, LENGTH = 0x2000
+}
+SECTIONS
+{
+     .init : { *(.init) } > ini
+     .text : { *(.text*) } > ram
+     .bss : { *(.bss*) } > ram
+     .rodata : { *(.rodata*) } > ram
+     .data : { *(.data*) } > ram
+}
